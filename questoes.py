@@ -2,16 +2,46 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'facil',
           'opcoes': {'A': '-19', 'B': '85', 'C': '89', 'D': '99'},
           'correta': 'C'},
+         
+         {'titulo': 'Que substância é absorvida pelas plantas e expirada pelo ser humano?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Oxigênio', 'B': 'Nitrogênio', 'C': 'Dióxido de carbono', 'D': 'Monóxido de carbono'},
+          'correta': 'C'},
+         
+         {'titulo': 'Qual o resultado da operação 181 - 72?',
+          'nivel': 'facil',
+          'opcoes': {'A': '101', 'B': '109', 'C': '107', 'D': '105'},
+          'correta': 'B'},
+         
+         {'titulo': 'O que é Via Láctea?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Marca de leite', 'B': 'Civilização antiga', 'C': 'Galáxia', 'D': 'Carro'},
+          'correta': 'C'},
 
+         {'titulo': 'Quais o menor e maior país do mundo?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Vaticano e Rússia', 'B': 'Mônaco e Canadá', 'C': 'Malta e Estados Unidos', 'D': 'São Marino e China'},
+          'correta': 'A'},
+         
          {'titulo': 'Qual a capital do Brasil?',
           'nivel': 'facil',
           'opcoes': {'A': 'Brasília', 'B': 'Rio de janeiro', 'C': 'São Paulo', 'D': 'Osasco'},
           'correta': 'A'},
+         
+         {'titulo': 'Qual o grupo em que todas as palavras foram escritas corretamente?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Asterístico, exceção, meteorologia, entertido', 'B': 'Asterisco, exceção, meteorologia, entretido', 'C': 'Asterisco, excessão, metereologia, entretido', 'D': 'Asterístico, excessão, metereologia, entertido'},
+          'correta': 'B'},
 
          {'titulo': 'Quando é o feriado da Independência do Brasil?',
           'nivel': 'facil',
           'opcoes': {'A': '21 de Abril', 'B': '12 de Outubro', 'C': '07 de Setembro', 'D': '15 de Novembro'},
           'correta': 'C'},
+         
+         {'titulo': 'Qual montanha se localiza entre a fronteira do Tibet com o Nepal?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Monte Fuji', 'B': 'Monte Verde', 'C': 'Monte Carlo', 'D': 'Monte Everest'},
+          'correta': 'D'},
 
          {'titulo': '_________ é um conjunto de particularidades que caracterizam um grupo de pessoas, uma família ou uma sociedade. É formada por princípios morais, hábitos, costumes, histórias, manifestações religiosas, entre outros. Qual palavra melhor completa o início da frase?',
           'nivel': 'facil',
@@ -47,6 +77,11 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'facil',
           'opcoes': {'A': 'Ibirapuera', 'B': 'Parque do Carmo', 'C': 'Parque Villa Lobos', 'D': 'Morro da Urca'},
           'correta': 'D'},
+         
+         {'titulo': 'Qual é o nome que descobriu o processo de pasteurização?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Antoine Lavoisier', 'B': 'Louis Pasteur', 'C': 'Charles Darwin', 'D': 'Marie Curie'},
+          'correta': 'B'},
 
          {'titulo': 'Qual destas não é uma linguagem de programação?',
           'nivel': 'facil',
@@ -58,10 +93,25 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'opcoes': {'A': 'Natação', 'B': 'Vôlei', 'C': 'Ski Cross Country', 'D': 'Futebol'},
           'correta': 'C'},
          
+         {'titulo': 'Que país da Europa é conhecido como Países Baixos?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Holanda', 'B': 'Áustria', 'C': 'Bélgica', 'D': 'Inglaterra'},
+          'correta': 'A'},
+         
          {'titulo': 'Qual o resultado da operação 5 + 2 * 3?',
           'nivel': 'medio',
           'opcoes': {'A': '21', 'B': '11', 'C': '30', 'D': '10'},
           'correta': 'B'},
+         
+         {'titulo': 'Quem pintou "Guernica"?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Paul Cézanne', 'B': 'Salvador Dalí', 'C': 'Pablo Picasso', 'D': 'Tarsila do Amaral'},
+          'correta': 'C'},
+         
+         {'titulo': 'As pessoas de qual tipo sanguíneo são consideradas doadoras universais?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Tipo A', 'B': 'Tipo B', 'C': 'Tipo O', 'D': 'TIpo ABO'},
+          'correta': 'C'},
 
          {'titulo': 'Qual destas é uma pseudociência que estuda os corpos celestes e as prováveis relações que possuem com a vida das pessoas e os acontecimentos na Terra?',
           'nivel': 'medio',
@@ -97,7 +147,12 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'medio',
           'opcoes': {'A': 'Ligue 101', 'B': 'Ligue 192', 'C': 'Ligue 109', 'D': 'Ligue 122'},
           'correta': 'B'},
-
+         
+         {'titulo': 'Como faço para chamar o telefone de emergência nos EUA?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Ligue 191', 'B': 'Ligue 192', 'C': 'Ligue 910', 'D': 'Ligue 911'},
+          'correta': 'D'},
+         
          {'titulo': 'Qual a segunda pessoa mais seguida no Instagram?',
           'nivel': 'medio',
           'opcoes': {'A': 'Cristiano Ronaldo', 'B': 'Dwayne Johnson', 'C': 'Kim Kardashian', 'D': 'Kylie Jenner'},
@@ -107,7 +162,37 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'medio',
           'opcoes': {'A': 'Cristiano Ronaldo', 'B': 'Dwayne Johnson', 'C': 'Kim Kardashian', 'D': 'Lionel Messi'},
           'correta': 'A'},
+         
+         {'titulo': 'Qual a pessoa mais seguida no Facebook?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Cristiano Ronaldo', 'B': 'Lionel Messi', 'C': 'Neymar Jr.', 'D': 'Pelé'},
+          'correta': 'A'},
 
+         {'titulo': 'Que profissional usa uma ferramenta chamada formão?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Confeiteiro', 'B': 'Bombeiro', 'C': 'Carpinteiro', 'D': 'Relojoeiro'},
+          'correta': 'C'},
+         
+         {'titulo': 'Como se chama o estudo entre palavras e signficados?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Fonética', 'B': 'Semântica', 'C': 'Filosofia', 'D': 'Psiquiatria'},
+          'correta': 'B'},
+         
+         {'titulo': 'Qual era a nacionalidade do escritor Oscar Wilde?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Americano', 'B': 'Escocês', 'C': 'Irlandês', 'D': 'Inglês'},
+          'correta': 'B'},
+         
+         {'titulo': 'Qual era o nome de Aleijadinho?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Alexandrino Francisco Lisboa', 'B': 'Manuel Francisco Lisboa', 'C': 'Alex Francisco Lisboa', 'D': 'Francisco Antônio Lisboa'},
+          'correta': 'B'},
+         
+         {'titulo': '_______ publicou o livro "O Prícipe" em ______.',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Maquiavel, 1953', 'B': 'Thomas Hobbes, 1950', 'C': 'Maquiavel, 1951', 'D': 'Thomas Hobbes, 1952'},
+          'correta': 'A'},
+         
          {'titulo': 'A reprodução dos seres vivos é um processo biológico através do qual os organismos geram descendência. Qual desta não é uma forma de reprodução assexuada?',
           'nivel': 'dificil',
           'opcoes': {'A': 'Autogamia', 'B': 'Esporulação', 'C': 'Partenogênese', 'D': 'Divisão binária'},
@@ -132,6 +217,11 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'dificil',
           'opcoes': {'A': '2022', 'B': '1791', 'C': '1935', 'D': '1871'},
           'correta': 'A'},
+         
+         {'titulo': 'Em que ano faleceu Charles Darwin?',
+          'nivel': 'dificil',
+          'opcoes': {'A': '1882', 'B': '1883', 'C': '1881', 'D': '1880'},
+          'correta': 'A'},
 
          {'titulo': 'Einstein foi Nobel de física em qual ano?',
           'nivel': 'dificil',
@@ -152,9 +242,19 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'dificil',
           'opcoes': {'A': '815', 'B': '762', 'C': '1100', 'D': '1057'},
           'correta': 'B'},
-
+         
+         {'titulo': 'Em que ordem surgiram os modelos atômicos?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Thomson, Rutherford-Bohr, Dalton, Rutherford', 'B': 'Dalton, Thomson, Rutherford-Bohr, Rutherford', 'C': 'Thomson, Rutherford, Dalton, Rutherford-Bohr', 'D': 'Dalton, Thomson, Rutherford, Rutherford-Bohr'},
+          'correta': 'D'},
+         
          {'titulo': 'O que é Necrose?',
           'nivel': 'dificil',
           'opcoes': {'A': 'Uma banda de Rock', 'B': 'Uma marca de luxo', 'C': 'Cidade Francesa', 'D': 'Morte de tecido orgânico'},
-          'correta': 'D'}
+          'correta': 'D'},
+         
+         {'titulo': 'Qual a montanha mais alta do Brasil e com quantos metros de altitude?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Pico da Bandeira, com 2891,32 metros de altitude', 'B': 'Pico da Neblina, com 2995,30 metros de altitude', 'C': 'Pico da Bandeira, com 2789,45 metros de altitude', 'D': 'Pico da Neblina, com 2 792,82 metros de altitude'},
+          'correta': 'B'}
         ]
