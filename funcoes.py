@@ -2,7 +2,6 @@ with open('questoes.py', 'r') as arquivo:
     questoes = arquivo.read()
 
 def valida_questao(questao):
-    print(questao)
     titulo_validez = True
     nivel_validez = True
     opcoes_validez = True
@@ -151,8 +150,6 @@ def sorteia_questao_inedida(dici, quest_nivel, quest_sort):
         return questao
 
 def questao_para_texto(questao, id):
-    print(questao)
-    print(id)
     lista_op = questao['opcoes']
     a = lista_op['A']
     b = lista_op['B']
@@ -162,7 +159,6 @@ def questao_para_texto(questao, id):
     return resultado
 
 def gera_ajuda (questao):
-    print(questao)
     resposta_correta = questao['correta']
     respostas = {}
     respostas.update(questao['opcoes'])
