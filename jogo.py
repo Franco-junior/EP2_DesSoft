@@ -1,4 +1,5 @@
 #Aqui será implantado o código do jogo do EP2
+from random import choice, randint
 
 branco=('\033[0;30m')
 vermelho=('\033[0;31m')
@@ -404,17 +405,16 @@ if {} in validezz:
         return dici     
     questoes_formatadas = transforma_base(listaa)
 
-import random
 def sorteia_questao(dici, nivel_sel):
     lista_quest = dici[nivel_sel]
-    questao = random.choice(lista_quest)
+    questao = choice(lista_quest)
     return questao
 
 def sorteia_questao_inedida(dici, quest_nivel, quest_sort):
     lista_quest = dici[quest_nivel]
     questao = sorteia_questao(dici, quest_nivel)
     while questao in quest_sort:
-        questao = random.choice(lista_quest)
+        questao = choice(lista_quest)
         if questao not in quest_sort:
             quest_sort.append(questao)
             return questao
@@ -436,24 +436,90 @@ def gera_ajuda (questao):
     respostas = {}
     respostas.update(questao['opcoes'])
     del respostas[resposta_correta]
-    vezes = random.randint(1,2)
+    vezes = randint(1,2)
     if vezes == 1:
-        resposta_errada = random.choice(list(respostas.items()))
+        resposta_errada = choice(list(respostas.items()))
         resultado = 'DICA:\nOpções certamente erradas: {0}'.format(respostas[resposta_errada[0]])
         return resultado
     if vezes == 2:
-        resposta_errada1 = random.choice(list(respostas.items()))
+        resposta_errada1 = choice(list(respostas.items()))
         new_respostas = {}
         new_respostas.update(respostas)
         del new_respostas[resposta_errada1[0]]
-        resposta_errada2 = random.choice(list(new_respostas.items()))
+        resposta_errada2 = choice(list(new_respostas.items()))
         resultado = 'DICA:\nOpções certamente erradas: {0} | {1}'.format(respostas[resposta_errada1[0]], respostas[resposta_errada2[0]])
         return 
 
 print('Olá, seja bem-vindo(a) ao jogo {0}Fortuna DesSoft'.format(amarelo))
 nome = input('{0}Digite seu nome: '. format(cinza))
-print('{0}, neste jogo você tem direito a 3 pulos e 2 ajudas para auxiliar'.format(nome))
+print('Ok {0}, neste jogo você tem direito a 3 pulos e 2 ajudas para auxiliá-l@!'.format(nome))
 print('{0}As suas opções de escolha são: "A", "B", "C", "D", "ajuda", "pula" e "parar"\n'.format(verde))
 come = input('Aperte ENTER para começar o jogo e boa sorte :)')
+print(f"{cinza}")
 
+operacao = True
+acertos = 0
+premio = 0
+programa = True
+primeira = False
+while operacao:
+    lista_sorteada = []
+    ajudas = 2
+    pulos = 3
+    id = 1
+    while programa:
+        if acertos <=3:
+            quest = sorteia_questao(questoes_formatadas, 'facil')
+            if primeira == True:
+                quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
+            primeira = True
+            quest_text = questao_para_texto(quest, id)
+            id += 1
+            lista_sorteada.append(quest_text)
+            print(quest_text)
+            resposta = input('Qual a sua resposta? ')
+            if resposta == quest['correta']:
+                acertos += 1
+                if acertos == 1:
+                    premio += 1000
+                    print('VOCÊ ACERTOU, seu prêmio agora é de {0}{1:.2f}{2}\n'.format(verde, premio, cinza))
+                    pergunta = input('Você deseja continuar? [S/N]')
+                    if pergunta == 'N':
+                        programa = False
+                        operacao = False
 
+            elif resposta == 'ajuda':
+                if ajudas == 0:
+                    print('Infelizmente você não possui mais ajudas :(')
+                else:    
+                    ajudas -= 1
+                    print(gera_ajuda(quest))
+                    resposta = input('Qual a sua resposta?! ')
+                    if resposta == quest['correta']:
+                        acertos += 1
+                    if resposta == 'ajuda':
+                        print("{0}Não deu! Você já pediu ajuda nessa questão!{1}".format(vermelho, cinza))
+                    if acertos == 1:
+                        premio += 1000
+                        print('VOCÊ ACERTOU, seu prêmio agora é de {0}{1}{2}\n'.format(verde, premio, cinza))
+                        pergunta = input('Você deseja continuar? [S/N]')
+
+            elif resposta == 'pula':
+                print('Pulando questão...')
+                quest = sorteia_questao_inedida()
+                programa = False
+                operacao = False
+            elif resposta == 'pula':
+                print('Ah que pena!! Infelizmente {0}você errou{1} e não ganhou nada :('.format(vermelho, cinza))
+                programa = False
+                operacao = False
+            elif resposta == 'parar':
+                cert = input("Deseja mesmo parar[S/N]? ")
+                if cert == "S":
+                    programa = False
+                    operacao = False
+                    print(f"Ok! Você parou e seu prêmio é de R$ {premio:.2f}")
+        #elif acertos > 3 and acertos <= 6:
+            #print("HEY! Você passou para o nível MEDIO!")
+            #input("Aperte ENTER para continuar...")
+        #elif acertos > 6:
