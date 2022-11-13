@@ -380,28 +380,29 @@ def valida_questoes(questoes):
 validezz = valida_questoes(listaa)
 
 if {} in validezz:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def transforma_base (questoes):
+        if questoes == []:
+            return {} 
+        facil = []
+        medio = []
+        dificil = []
+        dici = {}
+        for i in range(len(questoes)):
+            nivel = questoes[i]['nivel']
+            if nivel == 'facil':
+                facil.append(questoes[i])
+            elif nivel == 'medio':
+                medio.append(questoes[i])
+            elif nivel == 'dificil':
+                dificil.append(questoes[i])
+        if facil != []:
+            dici['facil'] = facil
+        if medio != []:
+            dici['medio'] = medio
+        if dificil != []:
+            dici['dificil'] = dificil
+        return dici     
+    questoes_formatadas = transforma_base(listaa)
 
 import random
 def sorteia_questao(dici, nivel_sel):
