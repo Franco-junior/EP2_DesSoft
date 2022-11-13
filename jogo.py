@@ -379,8 +379,80 @@ def valida_questoes(questoes):
 
 validezz = valida_questoes(listaa)
 
+if {} in validezz:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import random
+def sorteia_questao(dici, nivel_sel):
+    lista_quest = dici[nivel_sel]
+    questao = random.choice(lista_quest)
+    return questao
+
+def sorteia_questao_inedida(dici, quest_nivel, quest_sort):
+    lista_quest = dici[quest_nivel]
+    questao = sorteia_questao(dici, quest_nivel)
+    while questao in quest_sort:
+        questao = random.choice(lista_quest)
+        if questao not in quest_sort:
+            quest_sort.append(questao)
+            return questao
+    if questao not in quest_sort:
+        quest_sort.append(questao)
+        return questao
+
+def questao_para_texto(questao, id):
+    lista_op = questao['opcoes']
+    a = lista_op['A']
+    b = lista_op['B']
+    c = lista_op['C']
+    d = lista_op['D']
+    resultado = ('----------------------------------------\nQUESTAO {0}\n\n{1}\n\nRESPOSTAS:\nA: {2}\nB: {3}\nC: {4}\nD: {5}'.format(id, questao['titulo'], a, b, c, d))
+    return resultado
+
+def gera_ajuda (questao):
+    resposta_correta = questao['correta']
+    respostas = {}
+    respostas.update(questao['opcoes'])
+    del respostas[resposta_correta]
+    vezes = random.randint(1,2)
+    if vezes == 1:
+        resposta_errada = random.choice(list(respostas.items()))
+        resultado = 'DICA:\nOpções certamente erradas: {0}'.format(respostas[resposta_errada[0]])
+        return resultado
+    if vezes == 2:
+        resposta_errada1 = random.choice(list(respostas.items()))
+        new_respostas = {}
+        new_respostas.update(respostas)
+        del new_respostas[resposta_errada1[0]]
+        resposta_errada2 = random.choice(list(new_respostas.items()))
+        resultado = 'DICA:\nOpções certamente erradas: {0} | {1}'.format(respostas[resposta_errada1[0]], respostas[resposta_errada2[0]])
+        return 
+
 print('Olá, seja bem-vindo(a) ao jogo {0}Fortuna DesSoft'.format(amarelo))
 nome = input('{0}Digite seu nome: '. format(cinza))
 print('{0}, neste jogo você tem direito a 3 pulos e 2 ajudas para auxiliar'.format(nome))
 print('{0}As suas opções de escolha são: "A", "B", "C", "D", "ajuda", "pula" e "parar"\n'.format(verde))
 come = input('Aperte ENTER para começar o jogo e boa sorte :)')
+
+
