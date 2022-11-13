@@ -453,7 +453,8 @@ def gera_ajuda (questao):
 print('Olá, seja bem-vindo(a) ao jogo {0}Fortuna DesSoft'.format(amarelo))
 nome = input('{0}Digite seu nome: '. format(cinza))
 print('Ok {0}, neste jogo você tem direito a 3 pulos e 2 ajudas para auxiliá-l@!'.format(nome))
-print('{0}As suas opções de escolha são: "A", "B", "C", "D", "ajuda", "pula" e "parar"\n'.format(verde))
+print('{0}As suas opções de escolha são: "A", "B", "C", "D", "ajuda", "pula" e "parar"{1}\n'.format(verde, cinza))
+print("Vamos começas com as questões do nivel FACIL")
 come = input('Aperte ENTER para começar o jogo e boa sorte :)')
 print(f"{cinza}")
 
@@ -462,64 +463,83 @@ acertos = 0
 premio = 0
 programa = True
 primeira = False
+resppossiv = ['A', 'B', 'C', 'D', 'ajuda', 'pular', 'parar']
 while operacao:
     lista_sorteada = []
     ajudas = 2
     pulos = 3
-    id = 1
+    indquest = 1
     while programa:
         if acertos <=3:
             quest = sorteia_questao(questoes_formatadas, 'facil')
             if primeira == True:
                 quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
             primeira = True
-            quest_text = questao_para_texto(quest, id)
-            id += 1
+            quest_text = questao_para_texto(quest, indquest)
+            indquest += 1
             lista_sorteada.append(quest_text)
             print(quest_text)
             resposta = input('Qual a sua resposta? ')
+            while resposta not in resppossiv:
+                print("{0}Opção INVÁLIDA!".format(vermelho))
+                print("{0}As opções de resposta são A, B, C, D, pular e parar!{1}".format(azulclaro, cinza))
+                resposta = input("Qual a sua resposta? ")
             if resposta == quest['correta']:
                 acertos += 1
                 if acertos == 1:
                     premio += 1000
-                    print('VOCÊ ACERTOU, seu prêmio agora é de {0}{1:.2f}{2}\n'.format(verde, premio, cinza))
-                    pergunta = input('Você deseja continuar? [S/N]')
-                    if pergunta == 'N':
-                        programa = False
-                        operacao = False
+                    print('VOCÊ ACERTOU, seu prêmio agora é de {0}{1:.2f}{2}\n'.format(verde, premio, cinza))   
 
             elif resposta == 'ajuda':
                 if ajudas == 0:
                     print('Infelizmente você não possui mais ajudas :(')
                 else:    
                     ajudas -= 1
-                    print(gera_ajuda(quest))
-                    resposta = input('Qual a sua resposta?! ')
+                    if ajudas > 0:
+                        print("OK, lá vem ajuda! ATENÇÃO: Você só tem direito a mais {0} ajudas".format(ajudas))
+                        print(gera_ajuda(quest))
+                        resposta = input('Qual a sua resposta?! ')
+                        while resposta not in resppossiv:
+                            print("{0}Opção INVÁLIDA!".format(vermelho))
+                            print("{0}As opções de resposta são A, B, C, D, pular e parar!{1}".format(azulclaro, cinza))
+                            resposta = input("Qual a sua resposta? ")
                     if resposta == quest['correta']:
                         acertos += 1
-                    if resposta == 'ajuda':
-                        print("{0}Não deu! Você já pediu ajuda nessa questão!{1}".format(vermelho, cinza))
-                    if acertos == 1:
                         premio += 1000
                         print('VOCÊ ACERTOU, seu prêmio agora é de {0}{1}{2}\n'.format(verde, premio, cinza))
-                        pergunta = input('Você deseja continuar? [S/N]')
+                        pergunta = input('Aperte ENTER para continuar')
+                    elif resposta == 'ajuda':
+                        print("{0}Não deu! Você já pediu ajuda nessa questão!{1}".format(vermelho, cinza))
+                    else:
+                        print("{0}Que pena! Você errou e vai sair sem nada{1}".format(vermelho, cinza))
+                        operacao = False
+                        programa = False
 
             elif resposta == 'pula':
-                print('Pulando questão...')
+                if pulos != 0:
+                    print('Pulando questão... ATENÇÃO: Você só tem direito a {} pulos'.format(pulos))
                 quest = sorteia_questao_inedida()
                 programa = False
                 operacao = False
             elif resposta == 'pula':
-                print('Ah que pena!! Infelizmente {0}você errou{1} e não ganhou nada :('.format(vermelho, cinza))
+                print('Ah, que pena!! Infelizmente {0}você errou{1} e não ganhou nada :('.format(vermelho, cinza))
                 programa = False
                 operacao = False
             elif resposta == 'parar':
                 cert = input("Deseja mesmo parar[S/N]? ")
-                if cert == "S":
+                while cert not in 'SN':
+                    print("{0}Opção INVÁLIDA{1}".format(vermelho, cinza))
+                    cert = input("Deseja mesmo parar[S/N]?")
+                if cert == "S" and acertos != 0:
                     programa = False
                     operacao = False
                     print(f"Ok! Você parou e seu prêmio é de R$ {premio:.2f}")
-        #elif acertos > 3 and acertos <= 6:
-            #print("HEY! Você passou para o nível MEDIO!")
-            #input("Aperte ENTER para continuar...")
-        #elif acertos > 6:
+                elif cert == "S" and acertos == 0:
+                    print("Ok! Você parou mas, infelizmente, saiu sem nada :(")
+                else:
+                    print(quest_text)
+                    resposta = input('Qual a sua resposta? ')
+            else:
+                print("{0}Que pena! Você errou e vai sair sem nada{1}".format(vermelho, cinza))
+                operacao = False
+                programa = False
