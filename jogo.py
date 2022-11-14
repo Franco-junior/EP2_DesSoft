@@ -61,7 +61,7 @@ while operacao:
                 if resposta == quest['correta']:
                     acertos += 1
                     print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
-                    id += 1
+                    indquest += 1
             else:
                 print('Ok, ajuda à caminho...\n')
                 print('Você possui {0} ajudas restantes...'.format(ajudas))
