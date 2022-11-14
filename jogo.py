@@ -30,9 +30,8 @@ ajudas = 2
 pulos = 3
 indquest = 1
 while operacao:
-    while programa:
-        while acertos < 3:
-            quest = sorteia_questao(questoes_formatadas, 'facil')
+    while acertos < 3:
+        quest = sorteia_questao(questoes_formatadas, 'facil')
         if primeira == True:
             quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
         primeira = True
