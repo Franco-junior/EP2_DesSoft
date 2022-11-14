@@ -36,8 +36,7 @@ while operacao:
         if primeira == True:
             quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
         primeira = True
-        quest_text = questao_para_texto(quest, id)
-        id += 1
+        quest_text = questao_para_texto(quest, indquest)
         print(quest_text)
         resposta = input('Resposta: ')
         if resposta == quest['correta']:
