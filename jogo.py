@@ -50,29 +50,48 @@ while operacao:
                 premio += 5000
                 print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premio, cinza))
         elif resposta == 'ajuda':
-                if ajudas == 0:
+            if ajudas == 0:
+                print('Infelizmente você não possui mais ajudas :(')
+                resposta = input('Resposta: ')
+                while resposta == 'ajuda':
                     print('Infelizmente você não possui mais ajudas :(')
-                else:    
-                    ajudas -= 1
-                    if ajudas > 0:
-                        print("OK, lá vem ajuda! ATENÇÃO: Você só tem direito a mais {0} ajudas".format(ajudas))
-                        print(gera_ajuda(quest))
-                        resposta = input('Qual a sua resposta?! ')
-                        while resposta not in resppossiv:
-                            print("{0}Opção INVÁLIDA!".format(vermelho))
-                            print("{0}As opções de resposta são A, B, C, D, pular e parar!{1}".format(azulclaro, cinza))
-                            resposta = input("Qual a sua resposta? ")
-                    if resposta == quest['correta']:
-                        acertos += 1
+                    resposta = input('Resposta: ')
+            else:
+                print('Ok, ajuda à caminho...\n')
+                print('Você possui {0} ajudas restantes...'.format(ajudas))
+                ajudas -= 1
+                print(gera_ajuda(quest))
+                resposta = input('Resposta: ')
+                if resposta == quest['correta']:
+                    acertos += 1
+                    if acertos == 1:
                         premio += 1000
                         print('VOCÊ ACERTOU, seu prêmio agora é de {0}{1}{2}\n'.format(verde, premio, cinza))
-                        pergunta = input('Aperte ENTER para continuar')
-                    elif resposta == 'ajuda':
-                        print("{0}Não deu! Você já pediu ajuda nessa questão!{1}".format(vermelho, cinza))
-                    else:
-                        print("{0}Que pena! Você errou e vai sair sem nada{1}".format(vermelho, cinza))
-                        operacao = False
-                        programa = False
+                        pergunta = input('Você deseja continuar? [parar/N] ')
+                        if pergunta == 'N':
+                            programa = False
+                            operacao = False
+                while resposta == 'ajuda':
+                    print('Desculpe, você já pediu ajuda nessa questão!!')
+                    resposta = input('Resposta: ')
+                    if resposta == quest['correta']:
+                        acertos += 1
+                        if acertos == 1:
+                            premio += 1000
+                            print('VOCÊ ACERTOU, seu prêmio agora é de {0}{1}{2}\n'.format(verde, premio, cinza))
+                if resposta == 'pula':
+                    while pulos > 0:
+                        print('OK, pulando questão...')
+                        print('Você possui {0} pulos restantes...'.format(pulos))
+                        quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
+                        quest_text = questao_para_texto(quest, id)
+                        print(quest_text)
+                        resposta = input('Resposta: ')
+                        if resposta == quest['correta']:
+                            acertos += 1
+                            if acertos == 1:
+                                premio += 1000
+                                print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premio, cinza))
         elif resposta == 'pula':
                 if pulos != 0:
                     print('Pulando questão... ATENÇÃO: Você só tem direito a {} pulos'.format(pulos))
