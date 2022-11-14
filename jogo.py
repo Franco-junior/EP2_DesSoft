@@ -93,26 +93,29 @@ while operacao:
                                 premio += 1000
                                 print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premio, cinza))
         elif resposta == 'pula':
-                if pulos != 0:
-                    print('Pulando questão... ATENÇÃO: Você só tem direito a {} pulos'.format(pulos))
-                quest = sorteia_questao_inedida()
-                programa = False
-                operacao = False
-        elif resposta == 'parar':
-                cert = input("Deseja mesmo parar[S/N]? ")
-                while cert not in 'SN':
-                    print("{0}Opção INVÁLIDA{1}".format(vermelho, cinza))
-                    cert = input("Deseja mesmo parar[S/N]?")
-                if cert == "S" and acertos != 0:
-                    programa = False
-                    operacao = False
-                    print(f"Ok! Você parou e seu prêmio é de R$ {premio:.2f}")
-                elif cert == "S" and acertos == 0:
-                    print("Ok! Você parou mas, infelizmente, saiu sem nada :(")
-                else:
+            while pulos < 0:
+                    print('OK, pulando questão...')
+                    quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
+                    quest_text = questao_para_texto(quest, id)
                     print(quest_text)
-                    resposta = input('Qual a sua resposta? ')
-        else:
-                print("{0}Que pena! Você errou e vai sair sem nada{1}".format(vermelho, cinza))
-                operacao = False
-                programa = False
+                    resposta = input('Resposta: ')
+            if pulos == 0:
+                print('Infelizmente você não tem mais pulos :(\n')
+                resposta = input('Resposta: ')
+                while resposta == 'pula':
+                    print('Infelizmente você não tem mais pulos :(\n')
+                    resposta = input('Resposta: ')
+
+        elif resposta == 'parar':
+            print('Ok, parando...')
+            print('Parabéns, seu prêmio final é de R$ {0}{1:.2f}{2}\n'.format(verde, premio, cinza))
+            acertos = 10
+            operacao = False
+
+        elif resposta not in resppossiv:
+            print('{0}Opção inválida!!!{1}'.format(vermelho, cinza))
+            print('Suas opções são: {0}"A", "B", "C", "D", "ajuda", "pula", "parar"{1}'. format(verde, cinza))
+        elif resposta != quest['correta']:
+            print('Infelizmente você errou e não levará nada :(')
+            acertos = 10
+            operacao = False
