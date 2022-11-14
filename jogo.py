@@ -26,11 +26,11 @@ premio = 0
 programa = True
 primeira = False
 resppossiv = ['A', 'B', 'C', 'D', 'ajuda', 'pular', 'parar']
+lista_sorteada = []
+ajudas = 2
+pulos = 3
+indquest = 1
 while operacao:
-    lista_sorteada = []
-    ajudas = 2
-    pulos = 3
-    indquest = 1
     while programa:
         if acertos <=3:
             quest = sorteia_questao(questoes_formatadas, 'facil')
