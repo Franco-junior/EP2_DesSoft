@@ -23,7 +23,6 @@ print(f"{cinza}")
 operacao = True
 acertos = 0
 premio = 0
-programa = True
 primeira = False
 resppossiv = ['A', 'B', 'C', 'D', 'ajuda', 'pular', 'parar']
 lista_sorteada = []
@@ -39,7 +38,6 @@ while operacao:
             primeira = True
             quest_text = questao_para_texto(quest, indquest)
             indquest += 1
-            lista_sorteada.append(quest_text)
             print(quest_text)
             resposta = input('Qual a sua resposta? ')
             while resposta not in resppossiv:
