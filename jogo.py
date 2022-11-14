@@ -52,7 +52,7 @@ while operacao:
                 while (resposta == 'pular') and (pulos > 0):
                     print('OK, pulando questão...')
                     quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
-                    quest_text = questao_para_texto(quest, id)
+                    quest_text = questao_para_texto(quest, indquest)
                     print(quest_text)
                     resposta = input('Resposta: ')
                 while (resposta == 'pular') and (pulos <= 0):
@@ -84,7 +84,7 @@ while operacao:
                         print('OK, pulando questão...')
                         print('Você possui {0} pulos restantes...'.format(pulos))
                         quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
-                        quest_text = questao_para_texto(quest, id)
+                        quest_text = questao_para_texto(quest, indquest)
                         print(quest_text)
                         resposta = input('Resposta: ')
                         if resposta == quest['correta']:
@@ -95,7 +95,7 @@ while operacao:
             while pulos < 0:
                     print('OK, pulando questão...')
                     quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
-                    quest_text = questao_para_texto(quest, id)
+                    quest_text = questao_para_texto(quest, indquest)
                     print(quest_text)
                     resposta = input('Resposta: ')
             if pulos == 0:
@@ -142,7 +142,7 @@ while operacao:
                 while (resposta == 'pular') and (pulos > 0):
                     print('OK, pulando questão...')
                     quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
-                    quest_text = questao_para_texto(quest, id)
+                    quest_text = questao_para_texto(quest, indquest)
                     print(quest_text)
                     resposta = input('Resposta: ')
                 while (resposta == 'pular') and (pulos <= 0):
@@ -174,7 +174,7 @@ while operacao:
                         print('OK, pulando questão...')
                         print('Você possui {0} pulos restantes...'.format(pulos))
                         quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
-                        quest_text = questao_para_texto(quest, id)
+                        quest_text = questao_para_texto(quest, indquest)
                         print(quest_text)
                         resposta = input('Resposta: ')
                         if resposta == quest['correta']:
@@ -185,7 +185,7 @@ while operacao:
             while pulos < 0:
                     print('OK, pulando questão...')
                     quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
-                    quest_text = questao_para_texto(quest, id)
+                    quest_text = questao_para_texto(quest, indquest)
                     print(quest_text)
                     resposta = input('Resposta: ')
             if pulos == 0:
@@ -244,7 +244,7 @@ while operacao:
                 while (resposta == 'pular') and (pulos > 0):
                     print('OK, pulando questão...')
                     quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
-                    quest_text = questao_para_texto(quest, id)
+                    quest_text = questao_para_texto(quest, indquest)
                     print(quest_text)
                     resposta = input('Resposta: ')
                 while (resposta == 'pular') and (pulos <= 0):
@@ -276,7 +276,7 @@ while operacao:
                         print('OK, pulando questão...')
                         print('Você possui {0} pulos restantes...'.format(pulos))
                         quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
-                        quest_text = questao_para_texto(quest, id)
+                        quest_text = questao_para_texto(quest, indquest)
                         print(quest_text)
                         resposta = input('Resposta: ')
                         if resposta == quest['correta']:
@@ -287,7 +287,7 @@ while operacao:
             while pulos < 0:
                     print('OK, pulando questão...')
                     quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
-                    quest_text = questao_para_texto(quest, id)
+                    quest_text = questao_para_texto(quest, indquest)
                     print(quest_text)
                     resposta = input('Resposta: ')
             if pulos == 0:
