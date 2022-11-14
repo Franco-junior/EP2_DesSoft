@@ -106,7 +106,7 @@ while operacao:
             acertos = 10
             operacao = False
     
-    while acertos > 3 and acertos < 6:
+    while 3 <= acertos < 6:
         quest = sorteia_questao(questoes_formatadas, 'medio')
         if primeira == True:
             quest = sorteia_questao_inedida(questoes_formatadas, 'medio', lista_sorteada)
@@ -179,7 +179,7 @@ while operacao:
             acertos = 10
             operacao = False
       
-    while acertos > 6:
+    while 6 <= acertos < 9:
         quest = sorteia_questao(questoes_formatadas, 'dificil')
         if primeira == True:
             quest = sorteia_questao_inedida(questoes_formatadas, 'dificil', lista_sorteada)
