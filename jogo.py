@@ -11,7 +11,7 @@ roxo=('\033[0;35m')
 verdeagua=('\033[0;36m')
 cinza=('\033[0;37m')
     
-questoes_tranformadas = transforma_base(lista)
+questoes_formatadas = transforma_base(lista)
 
 print('Olá, seja bem-vindo(a) ao jogo {0}Fortuna DesSoft'.format(amarelo))
 nome = input('{0}Digite seu nome: '. format(cinza))
