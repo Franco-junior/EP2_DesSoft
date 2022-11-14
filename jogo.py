@@ -22,9 +22,9 @@ print(f"{cinza}")
 
 operacao = True
 acertos = 0
-premio = 0
 primeira = False
 resppossiv = ['A', 'B', 'C', 'D', 'ajuda', 'pular', 'parar']
+premios = [1000, 5000, 10000, 30000, 50000, 100000, 300000, 500000, 1000000]
 lista_sorteada = []
 ajudas = 2
 pulos = 3
@@ -40,15 +40,7 @@ while operacao:
         resposta = input('Resposta: ')
         if resposta == quest['correta']:
             acertos += 1
-            if acertos == 1:
-                premio += 1000
-                print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premio, cinza))
-            elif acertos == 2:
-                premio += 4000
-                print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premio, cinza))
-            elif acertos == 3:
-                premio += 5000
-                print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premio, cinza))
+            print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
         elif resposta == 'ajuda':
             if ajudas == 0:
                 print('Infelizmente você não possui mais ajudas :(')
@@ -64,21 +56,13 @@ while operacao:
                 resposta = input('Resposta: ')
                 if resposta == quest['correta']:
                     acertos += 1
-                    if acertos == 1:
-                        premio += 1000
-                        print('VOCÊ ACERTOU, seu prêmio agora é de {0}{1}{2}\n'.format(verde, premio, cinza))
-                        pergunta = input('Você deseja continuar? [parar/N] ')
-                        if pergunta == 'N':
-                            programa = False
-                            operacao = False
+                    print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
                 while resposta == 'ajuda':
                     print('Desculpe, você já pediu ajuda nessa questão!!')
                     resposta = input('Resposta: ')
                     if resposta == quest['correta']:
                         acertos += 1
-                        if acertos == 1:
-                            premio += 1000
-                            print('VOCÊ ACERTOU, seu prêmio agora é de {0}{1}{2}\n'.format(verde, premio, cinza))
+                        print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
                 if resposta == 'pula':
                     while pulos > 0:
                         print('OK, pulando questão...')
@@ -89,9 +73,7 @@ while operacao:
                         resposta = input('Resposta: ')
                         if resposta == quest['correta']:
                             acertos += 1
-                            if acertos == 1:
-                                premio += 1000
-                                print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premio, cinza))
+                            print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
         elif resposta == 'pula':
             while pulos < 0:
                     print('OK, pulando questão...')
@@ -108,13 +90,14 @@ while operacao:
 
         elif resposta == 'parar':
             print('Ok, parando...')
-            print('Parabéns, seu prêmio final é de R$ {0}{1:.2f}{2}\n'.format(verde, premio, cinza))
+            print('Parabéns, seu prêmio final é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
             acertos = 10
             operacao = False
 
         elif resposta not in resppossiv:
             print('{0}Opção inválida!!!{1}'.format(vermelho, cinza))
             print('Suas opções são: {0}"A", "B", "C", "D", "ajuda", "pula", "parar"{1}'. format(verde, cinza))
+            resposta = input('Resposta: ')
         elif resposta != quest['correta']:
             print('Infelizmente você errou e não levará nada :(')
             acertos = 10
