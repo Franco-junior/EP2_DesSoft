@@ -51,9 +51,6 @@ while operacao:
             elif acertos == 3:
                 premio += 5000
                 print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premio, cinza))
-                pergunta = input('Você deseja continuar? [S/parar] ')
-                if pergunta == 'parar':
-                    operacao = False  
         elif resposta == 'ajuda':
                 if ajudas == 0:
                     print('Infelizmente você não possui mais ajudas :(')
