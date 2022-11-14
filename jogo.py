@@ -41,6 +41,7 @@ while operacao:
         if resposta == quest['correta']:
             acertos += 1
             print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+            indquest += 1
         elif resposta == 'ajuda':
             if ajudas == 0:
                 print('Infelizmente você não possui mais ajudas :(')
@@ -51,6 +52,7 @@ while operacao:
                     if resposta == quest['correta']:
                         acertos += 1
                         print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+                        indquest += 1
             else:
                 print('Ok, ajuda à caminho...\n')
                 print('Você possui {0} ajudas restantes...'.format(ajudas))
@@ -60,12 +62,14 @@ while operacao:
                 if resposta == quest['correta']:
                     acertos += 1
                     print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+                    indquest += 1
                 while resposta == 'ajuda':
                     print('Desculpe, você já pediu ajuda nessa questão!!')
                     resposta = input('Resposta: ')
                     if resposta == quest['correta']:
                         acertos += 1
                         print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+                        indquest += 1
                 if resposta == 'pular':
                     while pulos > 0:
                         print('OK, pulando questão...')
@@ -77,6 +81,7 @@ while operacao:
                         if resposta == quest['correta']:
                             acertos += 1
                             print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+                            indquest += 1
         elif resposta == 'pular':
             while pulos < 0:
                     print('OK, pulando questão...')
@@ -117,6 +122,7 @@ while operacao:
         if resposta == quest['correta']:
             acertos += 1
             print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+            indquest += 1
         elif resposta == 'ajuda':
             if ajudas == 0:
                 print('Infelizmente você não possui mais ajudas :(')
@@ -133,12 +139,14 @@ while operacao:
                 if resposta == quest['correta']:
                     acertos += 1
                     print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+                    indquest += 1
                 while resposta == 'ajuda':
                     print('Desculpe, você já pediu ajuda nessa questão!!')
                     resposta = input('Resposta: ')
                     if resposta == quest['correta']:
                         acertos += 1
                         print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+                        indquest += 1
                 if resposta == 'pular':
                     while pulos > 0:
                         print('OK, pulando questão...')
@@ -150,6 +158,7 @@ while operacao:
                         if resposta == quest['correta']:
                             acertos += 1
                             print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+                            indquest += 1
         elif resposta == 'pular':
             while pulos < 0:
                     print('OK, pulando questão...')
@@ -189,7 +198,20 @@ while operacao:
         resposta = input('Resposta: ')
         if resposta == quest['correta']:
             acertos += 1
-            print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+            if acertos == 9:
+                print('Parabéns, você venceu o jogo e ganhou o prêmio final de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+                perguntafinal = input('Deseja jogar novamente? [S/N]')
+                if perguntafinal == 'S':
+                    acertos = 0
+                    ajudas = 2
+                    pulos = 3
+                    primeira = False
+                    lista_sorteada.clear()
+                    indquest = 1
+            else:
+                print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+                indquest += 1
+
         elif resposta == 'ajuda':
             if ajudas == 0:
                 print('Infelizmente você não possui mais ajudas :(')
@@ -206,12 +228,14 @@ while operacao:
                 if resposta == quest['correta']:
                     acertos += 1
                     print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+                    indquest += 1
                 while resposta == 'ajuda':
                     print('Desculpe, você já pediu ajuda nessa questão!!')
                     resposta = input('Resposta: ')
                     if resposta == quest['correta']:
                         acertos += 1
                         print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+                        indquest += 1
                 if resposta == 'pular':
                     while pulos > 0:
                         print('OK, pulando questão...')
@@ -223,6 +247,7 @@ while operacao:
                         if resposta == quest['correta']:
                             acertos += 1
                             print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
+                            indquest += 1
         elif resposta == 'pular':
             while pulos < 0:
                     print('OK, pulando questão...')
