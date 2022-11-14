@@ -15,7 +15,7 @@ questoes_formatadas = transforma_base(lista)
 print('Olá, seja bem-vindo(a) ao jogo {0}Fortuna DesSoft'.format(amarelo))
 nome = input('{0}Digite seu nome: '. format(cinza))
 print('Ok {0}, neste jogo você tem direito a 3 pulos e 2 ajudas para auxiliá-l@!'.format(nome))
-print('{0}As suas opções de escolha são: "A", "B", "C", "D", "ajuda", "pula" e "parar"{1}\n'.format(verde, cinza))
+print('{0}As suas opções de escolha são: "A", "B", "C", "D", "ajuda", "pular" e "parar"{1}\n'.format(verde, cinza))
 print("Vamos começas com as questões do nivel FACIL")
 come = input('Aperte ENTER para começar o jogo e boa sorte :)')
 print(f"{cinza}")
@@ -66,7 +66,7 @@ while operacao:
                     if resposta == quest['correta']:
                         acertos += 1
                         print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
-                if resposta == 'pula':
+                if resposta == 'pular':
                     while pulos > 0:
                         print('OK, pulando questão...')
                         print('Você possui {0} pulos restantes...'.format(pulos))
@@ -77,7 +77,7 @@ while operacao:
                         if resposta == quest['correta']:
                             acertos += 1
                             print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
-        elif resposta == 'pula':
+        elif resposta == 'pular':
             while pulos < 0:
                     print('OK, pulando questão...')
                     quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
@@ -87,7 +87,7 @@ while operacao:
             if pulos == 0:
                 print('Infelizmente você não tem mais pulos :(\n')
                 resposta = input('Resposta: ')
-                while resposta == 'pula':
+                while resposta == 'pular':
                     print('Infelizmente você não tem mais pulos :(\n')
                     resposta = input('Resposta: ')
 
@@ -99,7 +99,7 @@ while operacao:
 
         elif resposta not in resppossiv:
             print('{0}Opção inválida!!!{1}'.format(vermelho, cinza))
-            print('Suas opções são: {0}"A", "B", "C", "D", "ajuda", "pula", "parar"{1}'. format(verde, cinza))
+            print('Suas opções são: {0}"A", "B", "C", "D", "ajuda", "pular", "parar"{1}'. format(verde, cinza))
             resposta = input('Resposta: ')
         elif resposta != quest['correta']:
             print('Infelizmente você errou e não levará nada :(')
@@ -139,7 +139,7 @@ while operacao:
                     if resposta == quest['correta']:
                         acertos += 1
                         print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
-                if resposta == 'pula':
+                if resposta == 'pular':
                     while pulos > 0:
                         print('OK, pulando questão...')
                         print('Você possui {0} pulos restantes...'.format(pulos))
@@ -150,7 +150,7 @@ while operacao:
                         if resposta == quest['correta']:
                             acertos += 1
                             print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
-        elif resposta == 'pula':
+        elif resposta == 'pular':
             while pulos < 0:
                     print('OK, pulando questão...')
                     quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
@@ -160,7 +160,7 @@ while operacao:
             if pulos == 0:
                 print('Infelizmente você não tem mais pulos :(\n')
                 resposta = input('Resposta: ')
-                while resposta == 'pula':
+                while resposta == 'pular':
                     print('Infelizmente você não tem mais pulos :(\n')
                     resposta = input('Resposta: ')
 
@@ -172,7 +172,7 @@ while operacao:
 
         elif resposta not in resppossiv:
             print('{0}Opção inválida!!!{1}'.format(vermelho, cinza))
-            print('Suas opções são: {0}"A", "B", "C", "D", "ajuda", "pula", "parar"{1}'. format(verde, cinza))
+            print('Suas opções são: {0}"A", "B", "C", "D", "ajuda", "pular", "parar"{1}'. format(verde, cinza))
             resposta = input('Resposta: ')
         elif resposta != quest['correta']:
             print('Infelizmente você errou e não levará nada :(')
@@ -212,7 +212,7 @@ while operacao:
                     if resposta == quest['correta']:
                         acertos += 1
                         print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
-                if resposta == 'pula':
+                if resposta == 'pular':
                     while pulos > 0:
                         print('OK, pulando questão...')
                         print('Você possui {0} pulos restantes...'.format(pulos))
@@ -223,7 +223,7 @@ while operacao:
                         if resposta == quest['correta']:
                             acertos += 1
                             print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
-        elif resposta == 'pula':
+        elif resposta == 'pular':
             while pulos < 0:
                     print('OK, pulando questão...')
                     quest = sorteia_questao_inedida(questoes_formatadas, 'facil', lista_sorteada)
@@ -233,7 +233,7 @@ while operacao:
             if pulos == 0:
                 print('Infelizmente você não tem mais pulos :(\n')
                 resposta = input('Resposta: ')
-                while resposta == 'pula':
+                while resposta == 'pular':
                     print('Infelizmente você não tem mais pulos :(\n')
                     resposta = input('Resposta: ')
 
@@ -245,7 +245,7 @@ while operacao:
 
         elif resposta not in resppossiv:
             print('{0}Opção inválida!!!{1}'.format(vermelho, cinza))
-            print('Suas opções são: {0}"A", "B", "C", "D", "ajuda", "pula", "parar"{1}'. format(verde, cinza))
+            print('Suas opções são: {0}"A", "B", "C", "D", "ajuda", "pular", "parar"{1}'. format(verde, cinza))
             resposta = input('Resposta: ')
         elif resposta != quest['correta']:
             print('Infelizmente você errou e não levará nada :(')
