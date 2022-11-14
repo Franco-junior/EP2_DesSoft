@@ -48,6 +48,9 @@ while operacao:
                 while resposta == 'ajuda':
                     print('Infelizmente você não possui mais ajudas :(')
                     resposta = input('Resposta: ')
+                    if resposta == quest['correta']:
+                        acertos += 1
+                        print('VOCÊ ACERTOU, seu prêmio agora é de R$ {0}{1:.2f}{2}\n'.format(verde, premios[acertos-1], cinza))
             else:
                 print('Ok, ajuda à caminho...\n')
                 print('Você possui {0} ajudas restantes...'.format(ajudas))
