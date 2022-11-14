@@ -1,5 +1,4 @@
 #Aqui será implantado o código do jogo do EP2
-from random import choice, randint
 from funcoes import *
 from questoes import *
 branco=('\033[0;30m')
