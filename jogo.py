@@ -121,6 +121,8 @@ while operacao:
             operacao = False
     
     while 3 <= acertos < 6:
+        if acertos == 3:
+            print('Agora vamos para as questões médias...')
         quest = sorteia_questao(questoes_formatadas, 'medio')
         if primeira == True:
             quest = sorteia_questao_inedida(questoes_formatadas, 'medio', lista_sorteada)
@@ -211,6 +213,8 @@ while operacao:
             operacao = False
       
     while 6 <= acertos < 9:
+        if acertos == 6:
+            print('Agora vamos para as questões difíceis...')
         quest = sorteia_questao(questoes_formatadas, 'dificil')
         if primeira == True:
             quest = sorteia_questao_inedida(questoes_formatadas, 'dificil', lista_sorteada)
